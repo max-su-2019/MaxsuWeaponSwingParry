@@ -1,3 +1,3 @@
-# ExamplePlugin-CommonLibSSE
+# MaxsuWeaponSwingParry
 
-Basic plugin template for use with CommonLibSSE
+A SKSE Plugin
