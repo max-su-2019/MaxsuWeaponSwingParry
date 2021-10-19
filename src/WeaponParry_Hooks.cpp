@@ -12,7 +12,12 @@ namespace MaxsuWeaponParry
 
 			 hit_target->SetGraphVariableBool("Isblocking", true);
 			 _OnMeleeHit(hit_causer, hit_target, a_int1, a_bool, a_unkptr);
-			 SendRecoil(hit_target);
+
+			 bool recoil = false;
+			 if (hit_causer->GetGraphVariableBool("IsRecoiling", recoil) && recoil) {
+				 logger::debug(FMT_STRING("Attacker is recoling, ID is {:x}"), hit_causer->GetFormID());
+				 SendRecoil(hit_target);
+			 }
 
 			 hit_target->SetGraphVariableBool("Isblocking", false);
 			 return; 
